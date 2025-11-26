@@ -1,4 +1,4 @@
-# Lab 04 Group Policy Configuration (GPO-Only Lab)
+# Lab 04 – Group Policy Configuration (GPO-Only Lab)
 **Active Directory • GPO • System Hardening • Windows Management**
 
 This lab focuses exclusively on creating and deploying **Group Policy Objects (GPOs)** in a Windows domain environment.
@@ -8,8 +8,6 @@ It demonstrates three critical enterprise policies used daily by Helpdesk, SysAd
 - **Password & Lockout Policy**  
 - **Wallpaper Enforcement Policy**  
 - **Block CMD Security Policy**
-
-This lab isolates your GPO skills so recruiters can clearly see your policy engineering ability without mixing it into AD setup, NTFS permissions, or drive mapping.
 
 ---
 
@@ -41,7 +39,7 @@ This lab isolates your GPO skills so recruiters can clearly see your policy engi
 - GPMC view of GPO links & applied settings  
 
 📁 **Screenshots:**  
-`Step01_Password_And_Lockout_Policy/`
+[Step01_Password_And_Lockout_Policy](Step01_Password_And_Lockout_Policy/)
 
 ---
 
@@ -60,7 +58,7 @@ This lab isolates your GPO skills so recruiters can clearly see your policy engi
 6. Confirmed wallpaper applied correctly  
 
 📁 **Screenshots:**  
-`Step02_Wallpaper_Policy/`
+[Step02_Wallpaper_Policy](Step02_Wallpaper_Policy/)
 
 ---
 
@@ -83,7 +81,7 @@ Settings:
 - Confirmed policy enforcement across users  
 
 📁 **Screenshots:**  
-`Step03_Block_CMD/`
+[Step03_Block_CMD](Step03_Block_CMD/)
 
 ---
 
