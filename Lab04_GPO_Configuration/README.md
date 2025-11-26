@@ -67,48 +67,41 @@ Configured share permissions: - Everyone → Read - NTFS permissions allow
 read access for domain users
 
 ------------------------------------------------------------------------
+## 2.2 — Create & Configure the Wallpaper GPO
 
-## 🖥️ 2.2 -- Create & Configure the Wallpaper GPO
+Created a new GPO: **ADLAB — Desktop Wallpaper Policy**
 
-Created new GPO:
+Configured under:
 
-**ADLAB -- Desktop Wallpaper Policy**
+**User Configuration → Administrative Templates → Desktop → Desktop Wallpaper**
 
-Configured:
+Settings:
 
-**User Configuration → Administrative Templates → Desktop → Desktop
-Wallpaper**
+- Status: **Enabled**
+- Wallpaper Path (UNC):  
+  `\DC01.adlab.local\Wallpapershare\background.jpg`
+- Wallpaper Style: **Fill**
 
-Settings applied:
+📁 **Screenshots:**  
+**[Step02_Wallpaper_Policy](./Step02_Wallpaper_Policy)**
 
--   Enabled
--   Wallpaper Name (UNC path):
+---
 
-```{=html}
-<!-- -->
+## 2.3 — Apply the Policy
+
+On **client01**, ran:
+
 ```
-    \\DC01.adlab.local\Wallpapershare\background.jpg
+gpupdate /force
+```
 
--   Wallpaper Style: Fill
+Then logged out & back in.
 
-------------------------------------------------------------------------
+---
 
-## 🔄 2.3 -- Apply the Policy
+## 2.4 — Verify on Client
 
-On the client (`client01`), forced policy update:
-
-    gpupdate /force
-
-Logged out and back in for settings to take effect.
-
-------------------------------------------------------------------------
-
-## 🌄 2.4 -- Verify Wallpaper on Client
-
-The wallpaper successfully updated to the custom image across the domain
-user session.
-
-------------------------------------------------------------------------
+Wallpaper successfully applied to the domain user session.
 
 ---
 
