@@ -31,7 +31,7 @@ This lab simulates a real-world hardware failure scenario, including diagnosing 
 
 ## 🟦 Step 01 – Identify Hardware Failure
 📁 **Screenshots:**  
-[Step 01 — Identify Hardware Failure](Step%2001%20%E2%80%94%20Identify%20Hardware%20Failure/)
+[Step 01 – Identify Hardware Failure](Step%2001%20%E2%80%93%20Identify%20Hardware%20Failure/)
 
 I examined **Event Viewer → System Logs** and identified repeated disk I/O warnings indicating a failing storage device.
 
@@ -41,17 +41,17 @@ Then I collected system-wide hardware information to understand the full context
 
 ## 🟦 Step 02 – Run Diagnostics
 📁 **Screenshots:**  
-[Step 02 — Run Diagnostics (SMART, CHKDSK)](Step%2002%20%E2%80%94%20Run%20Diagnostics%20(SMART,%20CHKDSK)/)
+[Step 02 – Run Diagnostics (SMART, CHKDSK)](Step%2002%20%E2%80%93%20Run%20Diagnostics%20%28SMART,%20CHKDSK%29/)
 
 ### ✔ SMART Status  
 Command:
-```
+```powershell
 wmic diskdrive get status
 ```
 
 ### ✔ CHKDSK Scan  
 Command:
-```
+```powershell
 chkdsk /scan
 ```
 
@@ -60,9 +60,9 @@ Confirmed degraded disk state visually.
 
 ---
 
-## 🟦 Step 03 – Add Replacement Virtual Disk
+## 🟦 Step 03 – Simulate Faulted Drive & Add New Virtual Disk
 📁 **Screenshots:**  
-[Step 03 — Simulate Faulted Drive & Add New Virtual Disk](Step%2003%20%E2%80%94%20Simulate%20Faulted%20Drive%20%26%20Add%20New%20Virtual%20Disk/)
+[Step 03 – Simulate Faulted Drive & Add New Virtual Disk](Step%2003%20%E2%80%93%20Simulate%20Faulted%20Drive%20%26%20Add%20New%20Virtual%20Disk/)
 
 In **VirtualBox → Settings → Storage**, I added a new virtual hard disk to simulate replacing the failing physical drive.
 
@@ -70,9 +70,9 @@ On reboot, Windows automatically detected the new disk.
 
 ---
 
-## 🟦 Step 04 – Initialize & Format the New Disk
+## 🟦 Step 04 – Initialize and Format Replacement Disk
 📁 **Screenshots:**  
-[Step 04 — Initialize and Format Replacement Disk](Step%2004%20%E2%80%94%20Initialize%20and%20Format%20Replacement%20Disk/)
+[Step 04 – Initialize and Format Replacement Disk](Step%2004%20%E2%80%93%20Initialize%20and%20Format%20Replacement%20Disk/)
 
 Using **Disk Management**, I completed the replacement:
 
