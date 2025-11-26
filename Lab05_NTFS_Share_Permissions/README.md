@@ -1,14 +1,97 @@
-# Lab 05 – NTFS & Share Permissions
+# Lab 05 – NTFS & Share Permissions Configuration
+**Windows Server • File Security • NTFS ACLs • Helpdesk Troubleshooting**
 
-## Overview
-Assigns least‑privilege NTFS folder policies and tests with multiple users.
+This lab demonstrates configuring secure, department-based file access using **NTFS permissions**, one of the most essential skills for Helpdesk and System Administrators.  
+You test permissions with multiple users and validate both access and denial scenarios.
 
-## Screenshot naming:
-01_Create_Department_Folders.png
-02_HR_NTFS_Permissions.png
-03_IT_NTFS_Permissions.png
-04_Helpdesk_NTFS_Permissions.png
-05_Test_Access_HR_User.png
-06_Test_Access_Helpdesk_User.png
-07_Test_Access_IT_User.png
-08_Final_Result.png
+---
+
+## 📌 Objectives
+
+- Create department folders: **HR, IT, Helpdesk**  
+- Configure NTFS permissions (Allow / Modify / Read)  
+- Assign access using Active Directory security groups  
+- Simulate user access tests  
+- Confirm cross-department restrictions work correctly  
+
+---
+
+## 🟦 Step 01 – Create Department Folders
+
+Created the following folders on a shared volume/server:
+
+- **HR**  
+- **IT**  
+- **Helpdesk**
+
+Each folder received base NTFS permissions before group assignments.
+
+📁 **Screenshots:**  
+`Step01_Create_Department_Folders/`
+
+---
+
+## 🟦 Step 02 – Configure NTFS Permissions
+
+Assigned access based on AD security groups:
+
+| Folder   | Who Should Have Access | Permission |
+|----------|------------------------|------------|
+| HR       | HR Group Only          | Modify     |
+| IT       | IT Admins              | Modify     |
+| Helpdesk | Helpdesk Group         | Modify     |
+
+Configuration steps included:
+
+- Using the **Security** tab  
+- Disabling inheritance  
+- Cleaning existing permissions  
+- Adding proper AD security groups  
+- Confirming user-level permissions  
+
+📁 **Screenshots:**  
+`Step02_Configure_NTFS/`
+
+---
+
+## 🟦 Step 03 – Test Access
+
+Logged in as:
+
+- **Sarah Jones (HR)**  
+- **Brian Lopez (Helpdesk)**  
+- **Michael Reed (IT Admin)**  
+
+### ✔ Expected Correct Access:
+
+- HR → Access to **HR folder**  
+- IT → Access to **IT folder**  
+- Helpdesk → Access to **Helpdesk folder**  
+
+### ❌ Expected Correct Denials:
+
+- HR cannot access **IT** or **Helpdesk**  
+- Helpdesk cannot access **HR**  
+- IT Admin can access **all folders** (elevated rights)
+
+📁 **Screenshots:**  
+`Step03_Test_Access/`
+
+---
+
+## 📘 Summary
+
+This lab demonstrates:
+
+- Applying NTFS ACLs properly  
+- Assigning permissions using AD groups  
+- Validating effective permissions with real user logins  
+- Troubleshooting “Access Denied” issues  
+- Implementing **least privilege security principles**  
+
+A foundational enterprise skill required for:
+
+- Helpdesk  
+- Desktop Support  
+- Junior SysAdmin  
+- Windows Administration roles  
