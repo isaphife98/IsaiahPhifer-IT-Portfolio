@@ -5,7 +5,7 @@ This lab demonstrates building a full Windows Server 2019 Active Directory envir
 ---
 
 ## 📁 01-ServerSetup  
-**Screenshots stored in:** `01-ServerSetup`
+**Screenshots stored in:** [01-ServerSetup](01-ServerSetup/)
 
 ### Actions Performed:
 - Created a new VirtualBox VM  
@@ -17,7 +17,7 @@ This lab demonstrates building a full Windows Server 2019 Active Directory envir
 ---
 
 ## 📁 02-DHCP_DNS  
-**Screenshots stored in:** `02-DHCP_DNS`
+**Screenshots stored in:** [02-DHCP_DNS](02-DHCP_DNS/)
 
 ### Actions Performed:
 - Installed **Active Directory Domain Services**, **DNS**, and **DHCP**  
@@ -31,7 +31,7 @@ This lab demonstrates building a full Windows Server 2019 Active Directory envir
 ---
 
 ## 📁 03-GPOs  
-**Screenshots stored in:** `03-GPOs`
+**Screenshots stored in:** [03-GPOs](03-GPOs/)
 
 ### Group Policy Configurations:
 #### ✔ Drive Mapping GPO  
@@ -43,12 +43,12 @@ This lab demonstrates building a full Windows Server 2019 Active Directory envir
 ---
 
 ## 📁 04-ClientTesting  
-**Screenshots stored in:** `04-ClientTesting`
+**Screenshots stored in:** [04-ClientTesting](04-ClientTesting/)
 
 ### Validation Steps:
 - Joined **client01** to the domain  
 - Ran `gpupdate /force`  
-- Verified applied GPOs using **RSOP** and **gpresult /r`**  
+- Verified applied GPOs using **RSOP** and **gpresult /r**  
 - Logged in as:  
   - **Brian Lopez**  
   - **Sarah Johnson**  
