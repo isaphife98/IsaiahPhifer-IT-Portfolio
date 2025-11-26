@@ -27,7 +27,7 @@ Created the following folders on a shared volume/server:
 Each folder received base NTFS permissions before group assignments.
 
 📁 **Screenshots:**  
-[Step 01 — Create Department Folders](Step 01 — Create Department Folders/)
+[Step 01 — Create Department Folders](Step%2001%20%E2%80%94%20Create%20Department%20Folders/)
 
 ---
 
@@ -50,7 +50,7 @@ Configuration steps included:
 - Confirming user-level permissions  
 
 📁 **Screenshots:**  
-[Step 02 — Configure NTFS Permissions](Step 02 — Configure NTFS Permissions/)
+[Step 02 — Configure NTFS Permissions](Step%2002%20%E2%80%94%20Configure%20NTFS%20Permissions/)
 
 ---
 
@@ -75,7 +75,7 @@ Logged in as:
 - IT Admin can access **all folders** (elevated rights)
 
 📁 **Screenshots:**  
-[Step 03 — Test Access Restrictions (Positive & Negative Tests)](Step 03 — Test Access Restrictions (Positive & Negative Tests)/)
+[Step 03 — Test Access Restrictions (Positive & Negative Tests)](Step%2003%20%E2%80%94%20Test%20Access%20Restrictions%20(Positive%20&%20Negative%20Tests)/)
 
 ---
 
