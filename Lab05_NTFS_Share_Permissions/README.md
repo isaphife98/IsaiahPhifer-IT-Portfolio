@@ -27,7 +27,7 @@ Created the following folders on a shared volume/server:
 Each folder received base NTFS permissions before group assignments.
 
 📁 **Screenshots:**  
-`Step01_Create_Department_Folders/`
+[Step 01 — Create Department Folders](Step 01 — Create Department Folders/)
 
 ---
 
@@ -50,7 +50,7 @@ Configuration steps included:
 - Confirming user-level permissions  
 
 📁 **Screenshots:**  
-`Step02_Configure_NTFS/`
+[Step 02 — Configure NTFS Permissions](Step 02 — Configure NTFS Permissions/)
 
 ---
 
@@ -75,7 +75,7 @@ Logged in as:
 - IT Admin can access **all folders** (elevated rights)
 
 📁 **Screenshots:**  
-`Step03_Test_Access/`
+[Step 03 — Test Access Restrictions (Positive & Negative Tests)](Step 03 — Test Access Restrictions (Positive & Negative Tests)/)
 
 ---
 
@@ -95,3 +95,4 @@ A foundational enterprise skill required for:
 - Desktop Support  
 - Junior SysAdmin  
 - Windows Administration roles  
+
