@@ -30,37 +30,6 @@ This lab simulates a real-world hardware failure scenario, including diagnosing 
 ## 📁 Folder Structure
 
 ```
-Lab03_Hardware_Diagnosis/
-│
-├── README.md
-│
-├── Step01_Identify_Failure/
-│      Step 01 - Event Viewer Disk Warning.png
-│      Step 01 - Disk Warning Details.png
-│      Step 01 - System Components Overview.png
-│      Step 01 - System Information Summary.png
-│
-├── Step02_Diagnostics/
-│      Step 02 - WMIC SMART Status Check.png
-│      Step 02 - CHKDSK Scan Results.png
-│      Step 02 - Disk Management Initial View.png
-│
-├── Step03_Add_Replacement_Drive/
-│      Step 03 - VirtualBox Storage Before Changes.png
-│      Step 03 - Add New Virtual Disk.png
-│      Step 03 - New Disk Added to VM.png
-│      Step 03 - New Disk Detected in Windows.png
-│
-└── Step04_Initialize_And_Format/
-       Step 04 - New Disk Unallocated Space.png
-       Step 04 - Initialize Disk Popup.png
-       Step 04 - Disk Set to Online.png
-       Step 04 - New Simple Volume Wizard.png
-       Step 04 - Assign Drive Letter.png
-       Step 04 - Format New Drive.png
-```
-
----
 
 # 🟦 Step-by-Step Process
 
