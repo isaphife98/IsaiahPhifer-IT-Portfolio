@@ -29,6 +29,7 @@ This lab simulates a real-world hardware failure scenario, including diagnosing 
 
 # 🟦 Step-by-Step Process
 
+
 ## 🟦 Step 01 – Identify Disk Failure
 
 I examined **Event Viewer → System Logs** and identified repeated disk I/O warnings indicating a failing storage device.
