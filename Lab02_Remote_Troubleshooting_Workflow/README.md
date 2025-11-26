@@ -6,7 +6,7 @@ This lab simulates a real Helpdesk scenario where a remote user loses access to 
 
 ## 📁 Screenshots  
 All screenshots for this lab are stored in:  
-**`Screenshots/`**
+**[Screenshots](Screenshots/)**
 
 ---
 
