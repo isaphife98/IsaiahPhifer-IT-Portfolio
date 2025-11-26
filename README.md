@@ -19,12 +19,15 @@ Each lab simulates real-world tasks performed by Helpdesk, Desktop Support, and 
 
 ### 🔹 Completed Labs
 
-- [Lab 01 – Active Directory Environment Setup & User Management](Lab01_ActiveDirectory_EnvironmentSetup/)
-- [Lab 02 – Remote Troubleshooting & Support Workflow](Lab02_Remote_Troubleshooting/)
-- [Lab 03 – Hardware Diagnosis & Repair](Lab03_Hardware_Diagnosis/)
-- [Lab 04 – Drive Mapping via GPO (Item-Level Targeting)](Lab04_DriveMapping_GPO/)
-- [Lab 05 – Printer Deployment via GPO](Printer_Deployment_via_GPO/)
-- [Lab 06 – osTicket Helpdesk System](osTicket_Lab/)
+- [Lab 01 – Active Directory Environment Setup](Lab01_ActiveDirectory_Environment_Setup/)
+- [Lab 02 – Remote Troubleshooting Workflow](Lab02_Remote_Troubleshooting_Workflow/)
+- [Lab 03 – Drive Mapping via GPO (Item-Level Targeting)](Lab03_Drive_Mapping_GPO/)
+- [Lab 04 – GPO Configuration](Lab04_GPO_Configuration/)
+- [Lab 05 – NTFS & Share Permissions](Lab05_NTFS_Share_Permissions/)
+- [Lab 06 – Printer Deployment via GPO](Lab06_Printer_Deployment_via_GPO/)
+- [Lab 07 – osTicket Helpdesk Lab](Lab07_OSTicket_Lab/)
+- [Lab 08 – Hardware Diagnosis & Repair](Lab08_Hardware_Diagnosis_Repair/)
+
 
 ---
 
