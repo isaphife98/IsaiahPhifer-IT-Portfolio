@@ -25,10 +25,6 @@ This lab simulates a real-world hardware failure scenario, including diagnosing 
 - WMIC SMART  
 - CHKDSK  
 
----
-
-## 📁 Folder Structure
-
 ```
 
 ```
