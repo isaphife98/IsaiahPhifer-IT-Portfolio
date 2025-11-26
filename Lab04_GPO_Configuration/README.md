@@ -43,7 +43,7 @@ It demonstrates three critical enterprise policies used daily by Helpdesk, SysAd
 
 ---
 
-## 🖼️ Step 02 – Desktop Wallpaper Policy
+## 🟦 Step 02 – Desktop Wallpaper Policy
 
 **Implemented settings:**
 
