@@ -1,4 +1,4 @@
- Lab 08 – Hardware Diagnosis & Repair
+# Lab 08 – Hardware Diagnosis & Repair
 **IT Support • Hardware Troubleshooting • Disk Management • Virtualization**
 
 This lab simulates a real-world hardware failure scenario, including diagnosing a failing disk (SMART/CHKDSK), verifying warning events in Event Viewer, and performing a clean replacement using a new virtual disk inside VirtualBox.
