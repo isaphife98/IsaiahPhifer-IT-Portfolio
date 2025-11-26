@@ -1,17 +1,16 @@
-# Lab 02 – Remote Troubleshooting Workflow
+# Lab 02 – Remote Troubleshooting & Support Workflow
 
-## Overview
-Simulates a real helpdesk ticket: user loses access to a mapped drive. You recreate, troubleshoot, and resolve.
+This lab simulates a Helpdesk scenario where a remote user loses access to a shared network drive. The goal is to recreate the issue, diagnose it, fix it, and document the workflow.
 
-## Screenshot naming:
-01_ServerShareSettings.png
-02_ServerIP.png
-03_ClientAccessInitial.png
-04_MappedDriveWorking.png
-05_ServerPermissionsBroken.png
-06_ClientAccessError.png
-07_PingServer.png
-08_CredentialCheck.png
-09_ClientUNC_Test.png
-10_ServerPermissionsFixed.png
-11_ClientAccessRestored.png
+## Contents
+- Screenshots of each step
+- Full permissions breakdown
+- Troubleshooting workflow
+
+## Steps Covered
+1. Create and share a network folder (server)
+2. Map the drive on the client
+3. Break the permissions to simulate the issue
+4. Troubleshoot connectivity and credentials
+5. Fix the permissions
+6. Confirm restored access
