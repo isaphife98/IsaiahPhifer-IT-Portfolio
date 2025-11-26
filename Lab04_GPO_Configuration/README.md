@@ -51,11 +51,10 @@ domain users through GPO.
 
 ------------------------------------------------------------------------
 
-## 📁 Screenshot Folder
+📁 **Screenshots:**
+[Step02_Wallpaper_Policy](./Step02_Wallpaper_Policy)
 
-[Click here to view all screenshots](./Step02_Wallpaper_Policy)
-
-------------------------------------------------------------------------
+---
 
 ## 🖼️ 2.1 -- Place Wallpaper in Shared Folder on DC01
 
