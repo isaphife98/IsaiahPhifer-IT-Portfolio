@@ -2,7 +2,7 @@
 **Windows Server • File Security • NTFS ACLs • Helpdesk Troubleshooting**
 
 This lab demonstrates configuring secure, department-based file access using **NTFS permissions**, one of the most essential skills for Helpdesk and System Administrators.  
-You test permissions with multiple users and validate both access and denial scenarios.
+testing permissions with multiple users and validate both access and denial scenarios.
 
 ---
 
