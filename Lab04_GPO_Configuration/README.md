@@ -43,65 +43,25 @@ It demonstrates three critical enterprise policies used daily by Helpdesk, SysAd
 
 ---
 
-# Step 02 -- Desktop Wallpaper Policy
+## 🖼️ Step 02 – Desktop Wallpaper Policy
 
-This step applies a domain-wide desktop background using Group Policy.\
-The wallpaper is stored in a shared folder on DC01 and delivered to all
-domain users through GPO.
+**Implemented settings:**
 
-------------------------------------------------------------------------
-
-📁 **Screenshots:**
-
-[Step02_Wallpaper_Policy](./Step02_Wallpaper_Policy)
-
----
-
-## 🖼️ 2.1 -- Place Wallpaper in Shared Folder on DC01
-
-Copied custom wallpaper:
-
-    C:\Wallpapershare\background.jpg
-
-Configured share permissions: - Everyone → Read - NTFS permissions allow
-read access for domain users
-
-------------------------------------------------------------------------
-## 2.2 — Create & Configure the Wallpaper GPO
-
-Created a new GPO: **ADLAB — Desktop Wallpaper Policy**
-
-Configured under:
-
-**User Configuration → Administrative Templates → Desktop → Desktop Wallpaper**
-
-Settings:
-
-- Status: **Enabled**
-- Wallpaper Path (UNC):  
-  `\DC01.adlab.local\Wallpapershare\background.jpg`
+- Desktop Wallpaper GPO created  
+- UNC path configured:  
+  `\\DC01.adlab.local\Wallpapershare\background.jpg`
 - Wallpaper Style: **Fill**
+- Applied to user-level GPO scope
+
+**Validation performed:**
+
+- `gpupdate /force`  
+- Logged out & back in on **client01**  
+- Confirmed wallpaper successfully changed  
+- Verified GPO configuration in GPMC
 
 📁 **Screenshots:**  
-**[Step02_Wallpaper_Policy](./Step02_Wallpaper_Policy)**
-
----
-
-## 2.3 — Apply the Policy
-
-On **client01**, ran:
-
-```
-gpupdate /force
-```
-
-Then logged out & back in.
-
----
-
-## 2.4 — Verify on Client
-
-Wallpaper successfully applied to the domain user session.
+[Step02_Wallpaper_Policy](./Step02_Wallpaper_Policy)
 
 ---
 
