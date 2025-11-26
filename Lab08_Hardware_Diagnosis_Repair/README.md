@@ -29,54 +29,50 @@ This lab simulates a real-world hardware failure scenario, including diagnosing 
 
 # 🟦 Step-by-Step Process
 
-
-## 🟦 Step 01 – Identify Disk Failure
+## 🟦 Step 01 – Identify Hardware Failure
+📁 **Screenshots:**  
+[Step 01 — Identify Hardware Failure](Step%2001%20%E2%80%94%20Identify%20Hardware%20Failure/)
 
 I examined **Event Viewer → System Logs** and identified repeated disk I/O warnings indicating a failing storage device.
 
 Then I collected system-wide hardware information to understand the full context before replacement.
 
-📁 **Screenshots:**  
-`Step01_Identify_Failure/`
-
 ---
 
 ## 🟦 Step 02 – Run Diagnostics
+📁 **Screenshots:**  
+[Step 02 — Run Diagnostics (SMART, CHKDSK)](Step%2002%20%E2%80%94%20Run%20Diagnostics%20(SMART,%20CHKDSK)/)
 
 ### ✔ SMART Status  
 Command:
 ```
 wmic diskdrive get status
 ```
-SMART status showed warnings.
 
 ### ✔ CHKDSK Scan  
 Command:
 ```
 chkdsk /scan
 ```
-File system issues were detected.
 
 ### ✔ Disk Management  
 Confirmed degraded disk state visually.
 
-📁 **Screenshots:**  
-`Step02_Diagnostics/`
-
 ---
 
 ## 🟦 Step 03 – Add Replacement Virtual Disk
+📁 **Screenshots:**  
+[Step 03 — Simulate Faulted Drive & Add New Virtual Disk](Step%2003%20%E2%80%94%20Simulate%20Faulted%20Drive%20%26%20Add%20New%20Virtual%20Disk/)
 
 In **VirtualBox → Settings → Storage**, I added a new virtual hard disk to simulate replacing the failing physical drive.
 
 On reboot, Windows automatically detected the new disk.
 
-📁 **Screenshots:**  
-`Step03_Add_Replacement_Drive/`
-
 ---
 
 ## 🟦 Step 04 – Initialize & Format the New Disk
+📁 **Screenshots:**  
+[Step 04 — Initialize and Format Replacement Disk](Step%2004%20%E2%80%94%20Initialize%20and%20Format%20Replacement%20Disk/)
 
 Using **Disk Management**, I completed the replacement:
 
@@ -86,9 +82,6 @@ Using **Disk Management**, I completed the replacement:
 - Assigned drive letter  
 - Formatted using NTFS  
 - Verified healthy status  
-
-📁 **Screenshots:**  
-`Step04_Initialize_And_Format/`
 
 ---
 
@@ -102,6 +95,3 @@ This lab demonstrates essential IT technician and Helpdesk skills:
 - Simulating real hardware replacement in VirtualBox  
 - Understanding initialization, partitioning, and formatting  
 - Restoring full disk functionality after hardware failure  
-
-A realistic simulation of tasks handled by **Helpdesk**, **Desktop Support**, and **Junior SysAdmin** roles.
-
