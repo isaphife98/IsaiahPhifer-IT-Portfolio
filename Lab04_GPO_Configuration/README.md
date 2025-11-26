@@ -52,6 +52,7 @@ domain users through GPO.
 ------------------------------------------------------------------------
 
 📁 **Screenshots:**
+
 [Step02_Wallpaper_Policy](./Step02_Wallpaper_Policy)
 
 ---
