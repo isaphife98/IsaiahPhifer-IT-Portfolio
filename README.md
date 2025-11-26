@@ -1,4 +1,3 @@
-# IsaiahPhifer-IT-Portfolio[ROOT_README.md](https://github.com/user-attachments/files/23762214/ROOT_README.md)
 # 🖥️ Isaiah Phifer – IT Support Portfolio
 
 Welcome to my professional IT Support & Systems Administration portfolio.  
