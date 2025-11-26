@@ -105,9 +105,3 @@ This lab demonstrates essential IT technician and Helpdesk skills:
 
 A realistic simulation of tasks handled by **Helpdesk**, **Desktop Support**, and **Junior SysAdmin** roles.
 
-
----
-
-# 🚀 Lab Completed
-This lab is finished and ready to upload to your GitHub IT Support portfolio.
-
