@@ -1,4 +1,4 @@
-# 🎫 osTicket Helpdesk Lab
+# Lab 07 🎫 osTicket Helpdesk Lab
 
 This lab walks through installing and configuring the **osTicket** helpdesk system on a Windows 10 VM using **XAMPP** and **MySQL**, then simulates real-world tickets from end users and resolves them as an IT support agent.
 
@@ -27,7 +27,8 @@ This lab walks through installing and configuring the **osTicket** helpdesk syst
 ---
 
 ## 📁 01-Installation  
-**Screenshots stored in:** `01-Installation`
+**Screenshots stored in:**  
+[01-Installation](01-Installation/)
 
 Includes:
 - XAMPP installation  
@@ -38,7 +39,8 @@ Includes:
 ---
 
 ## 📁 02-Database-Setup  
-**Screenshots stored in:** `02-Database-Setup`
+**Screenshots stored in:**  
+[02-Database-Setup](02-Database-Setup/)
 
 Includes:
 - Creating the osTicket database  
@@ -48,7 +50,8 @@ Includes:
 ---
 
 ## 📁 03-Admin-Configuration  
-**Screenshots stored in:** `03-Admin-Configuration`
+**Screenshots stored in:**  
+[03-Admin-Configuration](03-Admin-Configuration/)
 
 Includes:
 - Running the osTicket installer  
@@ -59,7 +62,8 @@ Includes:
 ---
 
 ## 📁 04-Departments-Teams-Agents  
-**Screenshots stored in:** `04-Departments-Teams-Agents`
+**Screenshots stored in:**  
+[04-Departments-Teams-Agents](04-Departments-Teams-Agents/)
 
 Includes:
 - IT Support Department  
@@ -69,7 +73,8 @@ Includes:
 ---
 
 ## 📁 05-User-Portal  
-**Screenshots stored in:** `05-User-Portal`
+**Screenshots stored in:**  
+[05-User-Portal](05-User-Portal/)
 
 Includes:
 - End-user portal homepage  
@@ -79,7 +84,8 @@ Includes:
 ---
 
 ## 📁 06-Ticket-Workflow  
-**Screenshots stored in:** `06-Ticket-Workflow`
+**Screenshots stored in:**  
+[06-Ticket-Workflow](06-Ticket-Workflow/)
 
 Includes:
 - Agent dashboard  
