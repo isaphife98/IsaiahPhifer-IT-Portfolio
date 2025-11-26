@@ -25,8 +25,6 @@ Created the following folders on a shared volume/server:
 - **IT**  
 - **Helpdesk**
 
-Each folder received base NTFS permissions before group assignments.
-
 📁 **Screenshots:**  
 [Step 01 — Create Department Folders](Step%2001%20%E2%80%94%20Create%20Department%20Folders/)
 
