@@ -1,80 +1,110 @@
-# Lab 06 📡 Printer Deployment via Group Policy (GPO)
+# Lab 06 🚀 Drive Mapping via Group Policy (Item-Level Targeting)
+**Active Directory • GPO • File Services • Client Management**
 
-Lab Type: Active Directory | Group Policy | Print Management  
-Server: Windows Server 2019 (DC01)  
-Client: Windows 10 (client01)  
-Objective: Create a shared network printer on DC01 and deploy it automatically to domain users using Group Policy.
+This lab demonstrates how to deploy network drive mappings using **Group Policy Preferences** with **Item-Level Targeting (ILT)** so each department receives only the drives assigned to them.
 
----
-
-## 🧩 Overview
-
-In this lab, I:
-
-- Installed a virtual printer on the domain controller (DC01)  
-- Shared the printer for domain users  
-- Created a Printer Deployment GPO  
-- Configured Point and Print Restrictions  
-- Linked the GPO to the **Users OU**  
-- Verified automatic deployment on **client01**
-
-This replicates a real helpdesk task where IT must deploy network printers without manually installing them on individual computers.
+This reflects a daily real-world task for Helpdesk & SysAdmin teams.
 
 ---
 
-## 🥇 Step 01 — Create & Share the Printer on DC01  
-📁 **All screenshots stored in:**  
-**`Step 01 — Create & Share the Printer on DC01`**
+## 📁 STEP 01 — Create_Shares  
+**Screenshots stored in:** `STEP 01 — Create_Shares`
 
 ### Actions Performed:
-1. Open **Devices and Printers**  
-2. Add a new printer  
-3. Select **Add a local printer or network printer with manual settings**  
-4. Choose **LPT1** port  
-5. Install the **Generic/Text Only** printer driver  
-6. Name the printer **IT Department Printer – PDF**  
-7. Enable **printer sharing**  
-8. Confirm the printer appears in the list on DC01  
+Created departmental and public network shares:
+
+- HR  
+- Helpdesk  
+- IT  
+- Public  
+
+Initial NTFS + share structure prepared for ILT.
 
 ---
 
-## 🥈 Step 02 — Deploy Printer via Group Policy  
-📁 **All screenshots stored in:**  
-**`Step 02 — Deploy Printer via Group Policy`**
+## 📁 STEP 02 — Validate NTFS Permissions  
+**Screenshots stored in:** `STEP 02 — Validate NTFS Permissions`
 
-### Actions Performed:
-1. Create a new GPO called **Printer Deployment Policy**  
-2. Add the shared printer under **Deployed Printers**  
-3. Link the GPO to the **Users OU**  
-4. Configure **Point and Print Restrictions** to allow installation without admin prompts  
+### User ↔ Group Mapping:
 
----
+| User          | Group        | Department |
+|---------------|--------------|------------|
+| Sarah Jones   | HR           | HR         |
+| Brian Lopez   | Helpdesk     | Helpdesk   |
+| Michael Reed  | IT Admins    | IT         |
 
-## 🥉 Step 3 — Client Validation (client01)  
-📁 **All screenshots stored in:**  
-**`Step 3 — Client Validation (client01)`**
-
-### Actions Performed:
-1. Run `gpupdate /force` on client01  
-2. Run `gpresult /r` to verify policy application  
-3. Open `\\DC01` to view shared printers  
-4. Confirm the printer automatically installs in **Devices and Printers**  
+Correct NTFS permissions ensure that ILT can enforce access correctly.
 
 ---
 
-## 🎉 Results
+## 📁 STEP 03 — Create GPO Drive Mappings  
+**Screenshots stored in:** `STEP 03 — Create GPO Drive Mappings`
 
-✔ Printer successfully created and shared on DC01  
-✔ Deployed domain-wide using Group Policy  
-✔ Automatically installed on the client PC  
-✔ Fully validated through gpupdate & gpresult  
+### GPO: **“Department Drive Mapping GPO”**
+
+Configured drive mappings:
+
+- **H:\ → HR** (HR Group Only)  
+- **D:\ → Helpdesk** (Helpdesk Group Only)  
+- **I:\ → IT Admin** (IT Admins Only)  
+- **P:\ → Public** (Authenticated Users)
+
+Configured via:
+
+```
+User Configuration  
+   → Preferences  
+       → Windows Settings  
+           → Drive Maps  
+```
+
+Each drive mapping included:
+
+- Assigned drive letter  
+- UNC path  
+- Action: Replace  
+- Item-Level Targeting → Security Group Filter  
 
 ---
 
-## 🧠 Skills Demonstrated
+## 📁 STEP 04 — Client Testing  
+**Screenshots stored in:** `STEP 04 — Client Testing`
 
-- Active Directory OU management  
-- Group Policy (GPO) creation and linking  
-- Printer deployment automation  
-- Troubleshooting & validation  
-- Technical documentation  
+### Expected Results:
+
+#### ✔ Sarah (HR)  
+- H:\ HR  
+- P:\ Public  
+❌ No Helpdesk  
+❌ No IT  
+
+#### ✔ Brian (Helpdesk)  
+- D:\ Helpdesk  
+- P:\ Public  
+❌ No HR  
+❌ No IT  
+
+#### ✔ Michael (IT Admin)  
+- I:\ IT Admin  
+- P:\ Public  
+✔ May see additional shares depending on broader permissions  
+
+Validation performed using:
+
+- gpupdate /force  
+- gpresult /r  
+- File Explorer access tests  
+- Permission enforcement checks  
+
+---
+
+## 🧠 Summary
+
+This lab demonstrates:
+
+- Group Policy Preferences for drive mapping  
+- Item-Level Targeting using AD security groups  
+- NTFS + GPO integration  
+- Correct departmental share deployment  
+- Real-world troubleshooting and verification  
+- Enterprise-grade Windows administration workflow  
