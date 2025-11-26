@@ -1,4 +1,4 @@
-# Lab 03 Drive Mapping via Group Policy (Item-Level Targeting)
+# Lab 03 – Drive Mapping via Group Policy (Item-Level Targeting)
 **Active Directory • GPO • File Services • Client Management**
 
 This lab demonstrates how to assign network drive mappings using **Group Policy Preferences** with **Item-Level Targeting (ILT)** so each department only receives its assigned network share.
@@ -21,15 +21,15 @@ This is a real configuration performed daily by Helpdesk & SysAdmin teams.
 
 Created:
 
-- HR
-- Helpdesk
-- IT
-- Public
+- HR  
+- Helpdesk  
+- IT  
+- Public  
 
 Set initial share structure.
 
 📁 **Screenshots:**  
-`Step01_Create_Shares/`
+[Step01_Create_Shares](Step01_Create_Shares/)
 
 ---
 
@@ -46,14 +46,13 @@ Mapped security groups:
 Correct NTFS permissions ensure ILT works properly.
 
 📁 **Screenshots:**  
-`Step02_Validate_NTFS_and_Groups/`
+[Step02_Wallpaper_Policy](Step02_Wallpaper_Policy/)
 
 ---
 
 ## 🟦 Step 03 – Configure Drive Mapping GPO
 
-Created GPO:
-
+Created GPO:  
 **“Department Drive Mapping GPO”**
 
 Included mappings:
@@ -77,14 +76,14 @@ Each drive mapping configured with:
 - Assigned drive letter  
 - UNC path  
 - Action: Replace  
-- Item-Level Targeting → Security Group Filter
+- Item-Level Targeting → Security Group Filter  
 
 📁 **Screenshots:**  
-`Step03_Create_Drive_Mapping_GPO/`
+[Step03_Block_CMD](Step03_Block_CMD/)
 
 ---
 
-## 🟦 Step 04 – Client Testing (Sarah, Brian, Michael)
+## 🟦 Step 04 – Client Testing
 
 ### Sarah (HR) should see:
 - H:\ HR  
@@ -111,7 +110,7 @@ Validated with:
 - NTFS permission enforcement  
 
 📁 **Screenshots:**  
-`Step04_Client_Testing/`
+[STEP 04 — Client Testing](STEP 04 — Client Testing/)
 
 ---
 
@@ -125,3 +124,4 @@ This lab demonstrates:
 - Correct integration of NTFS + GPO  
 - Real-world troubleshooting scenarios  
 - Enterprise-grade Windows support workflow  
+
