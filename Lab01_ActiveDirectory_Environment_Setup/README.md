@@ -1,74 +1,75 @@
-# 🖥️ Lab 01 – Active Directory Environment Setup & User Management
+# 🖥️ Lab 01 – Active Directory Environment Setup & User Management  
+**Windows Server 2019 • AD DS • DNS • DHCP • OUs • Users • Groups • Client Join**
 
-This lab demonstrates building a full Windows Server 2019 Active Directory environment, configuring DHCP/DNS, creating users and groups, applying GPOs, and verifying all functionality on the client machine.
+This lab demonstrates building a complete Active Directory environment from scratch and validating domain functionality with a Windows 10 client.
 
 ---
 
-## 📁 01-ServerSetup  
-**Screenshots stored in:** [01-ServerSetup](01-ServerSetup/)
+## 📁 **01-ServerSetup**  
+**Screenshots stored in:** [01-ServerSetup](./01-ServerSetup)
 
-### Actions Performed:
+### **Actions Performed:**
 - Created a new VirtualBox VM  
 - Attached the Windows Server 2019 ISO  
 - Installed Windows Server and completed initial setup  
 - Logged in as **Administrator**  
-- Performed initial Server Manager configuration (computer name, IP settings, etc.)
+- Performed Server Manager initial configuration (computer name, static IP, timezone, etc.)
 
 ---
 
-## 📁 02-DHCP_DNS  
-**Screenshots stored in:** [02-DHCP_DNS](02-DHCP_DNS/)
+## 📁 **02-DHCP_DNS**  
+**Screenshots stored in:** [02-DHCP_DNS](./02-DHCP_DNS)
 
-### Actions Performed:
-- Installed **Active Directory Domain Services**, **DNS**, and **DHCP**  
-- Promoted the server to a domain controller for **adlab.local**  
-- Created a DHCP Scope with:  
-  - **003 Router** → 10.0.0.10  
-  - **006 DNS Server** → 10.0.0.10  
-  - **015 DNS Domain Name** → adlab.local  
-- Authorized DHCP and verified DNS functionality
-
----
-
-## 📁 03-GPOs  
-**Screenshots stored in:** [03-GPOs](03-GPOs/)
-
-### Group Policy Configurations:
-#### ✔ Drive Mapping GPO  
-- Created shared folders on the server  
-- Built a **Drive Mapping** policy using Group Policy Preferences  
-- Applied **Item-Level Targeting** using security groups  
-- Verified group membership and share access via Computer Management
+### **Actions Performed:**
+- Installed **AD DS**, **DNS**, and **DHCP** roles  
+- Promoted server to a Domain Controller for **adlab.local**  
+- Configured DNS Forward Lookup Zone  
+- Created DHCP scope with required options:  
+  - **003 Router:** 10.0.0.1  
+  - **006 DNS Server:** 10.0.0.10  
+  - **015 DNS Domain Name:** adlab.local  
+- Authorized DHCP and validated DNS resolution  
 
 ---
 
-## 📁 04-ClientTesting  
-**Screenshots stored in:** [04-ClientTesting](04-ClientTesting/)
+## 📁 **03-User_and_Group_Creation**  
+**Screenshots stored in:** [03-User_and_Group_Creation](./03-User_and_Group_Creation)
 
-### Validation Steps:
-- Joined **client01** to the domain  
-- Ran `gpupdate /force`  
-- Verified applied GPOs using **RSOP** and **gpresult /r**  
-- Logged in as:  
-  - **Brian Lopez**  
-  - **Sarah Johnson**  
-  - **Michael Reed**  
-- Confirmed:
-  - Correct drive mappings  
-  - Correct folder permissions  
-  - Working network authentication  
-  - Proper access restrictions per user/group
+### **Actions Performed:**
+- Created base OU structure  
+- Created user accounts:  
+  - Ashley Young  
+  - Brian Lopez  
+  - David Kim  
+  - Michael Reed  
+  - Sarah Jones  
+  - Xavier Parker  
+- Created security groups:  
+  - **HR Department**  
+  - **Helpdesk Team**  
+  - **IT Admins**  
+- Assigned users to the correct department security groups  
 
 ---
 
-## 🎯 Final Result
+## 📁 **04-Client_Domain_Join**  
+**Screenshots stored in:** [04-Client_Domain_Join](./04-Client_Domain_Join)
 
-A fully functional Active Directory environment was created with:
+### **Actions Performed:**
+- Created Windows 10 VM (`client01`)  
+- Set DNS to point to domain controller (10.0.0.10)  
+- Joined client01 to **adlab.local**  
+- Verified domain login using test users  
+- Confirmed correct DNS suffix, IP configuration, and user session  
 
-- Windows Server 2019 domain controller  
-- DHCP & DNS properly configured  
-- Users, Groups, and OU structure  
-- Drive Mapping GPO with item-level targeting  
-- Successful client-side validation  
+---
 
-This lab simulates real enterprise sysadmin and helpdesk responsibilities.
+## 🎯 **Final Result**
+This lab produced a fully configured enterprise-style AD environment:
+
+- Windows Server 2019 Domain Controller  
+- Functional DNS & DHCP services  
+- Organized OUs  
+- Users and role-based security groups  
+- A domain-joined Windows 10 client  
+- Verified authentication and domain connectivity  
