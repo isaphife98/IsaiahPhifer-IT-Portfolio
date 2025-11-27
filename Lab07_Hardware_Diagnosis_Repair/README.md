@@ -1,97 +1,102 @@
-# Lab 08 – Hardware Diagnosis & Repair
-**IT Support • Hardware Troubleshooting • Disk Management • Virtualization**
+# 🛠️ Lab 02 – Remote Troubleshooting & Support Workflow
 
-This lab simulates a real-world hardware failure scenario, including diagnosing a failing disk (SMART/CHKDSK), verifying warning events in Event Viewer, and performing a clean replacement using a new virtual disk inside VirtualBox.
-
----
-
-## 📌 Objectives
-
-- Detect hardware issues using **Event Viewer**  
-- Run diagnostic commands (SMART, CHKDSK)  
-- Examine system information for hardware context  
-- Add a replacement hard drive in **VirtualBox**  
-- Initialize, partition, and format the new disk  
-- Validate successful disk replacement  
+This lab simulates a real Helpdesk ticket where a user suddenly loses access to a mapped shared drive. I recreated the issue, troubleshot it from both the client and server perspective, restored access, and documented every step with screenshots.
 
 ---
 
-## 🛠️ Technologies Used
-
-- Windows 10 / Windows Server  
-- VirtualBox  
-- Event Viewer  
-- Disk Management  
-- WMIC SMART  
-- CHKDSK  
+## 📁 Screenshots
+All screenshots are stored in the folder:  
+**[📂 Screenshots](Screenshots/)**
 
 ---
 
-# 🟦 Step-by-Step Process
+# 🧩 Overview
+This lab demonstrates the full lifecycle of a Helpdesk support case:
 
-## 🟦 Step 01 – Identify Hardware Failure
-📁 **Screenshots:**  
-[Step 01 – Identify Hardware Failure](Step%2001%20%E2%80%93%20Identify%20Hardware%20Failure/)
-
-I examined **Event Viewer → System Logs** and identified repeated disk I/O warnings indicating a failing storage device.
-
-Then I collected system-wide hardware information to understand the full context before replacement.
-
----
-
-## 🟦 Step 02 – Run Diagnostics
-📁 **Screenshots:**  
-[Step 02 – Run Diagnostics (SMART, CHKDSK)](Step%2002%20%E2%80%93%20Run%20Diagnostics%20%28SMART,%20CHKDSK%29/)
-
-### ✔ SMART Status  
-Command:
-```powershell
-wmic diskdrive get status
-```
-
-### ✔ CHKDSK Scan  
-Command:
-```powershell
-chkdsk /scan
-```
-
-### ✔ Disk Management  
-Confirmed degraded disk state visually.
+- Recreated the shared drive issue  
+- Verified client connectivity  
+- Checked authentication & cached credentials  
+- Identified and fixed server-side permissions  
+- Restored connectivity  
+- Documented the workflow for future reference  
 
 ---
 
-## 🟦 Step 03 – Simulate Faulted Drive & Add New Virtual Disk
-📁 **Screenshots:**  
-[Step 03 – Simulate Faulted Drive & Add New Virtual Disk](Step%2003%20%E2%80%93%20Simulate%20Faulted%20Drive%20%26%20Add%20New%20Virtual%20Disk/)
+# 🥇 Step 1 — Create & Share the Network Folder (Server)
 
-In **VirtualBox → Settings → Storage**, I added a new virtual hard disk to simulate replacing the failing physical drive.
+Configured a shared folder on the domain controller and verified initial share/NTFS permissions.
 
-On reboot, Windows automatically detected the new disk.
-
----
-
-## 🟦 Step 04 – Initialize and Format Replacement Disk
-📁 **Screenshots:**  
-[Step 04 – Initialize and Format Replacement Disk](Step%2004%20%E2%80%93%20Initialize%20and%20Format%20Replacement%20Disk/)
-
-Using **Disk Management**, I completed the replacement:
-
-- Brought disk online  
-- Initialized disk (MBR or GPT)  
-- Created a new simple volume  
-- Assigned drive letter  
-- Formatted using NTFS  
-- Verified healthy status  
+📸 **Screenshots:**  
+- 01_ServerShareSettings.png  
+- 02_ServerIP.png  
 
 ---
 
-# 📘 Summary / Takeaways
+# 🥈 Step 2 — Map the Network Drive (Client)
 
-This lab demonstrates essential IT technician and Helpdesk skills:
+Confirmed that the client can initially access the shared folder and map it successfully.
 
-- Reading & interpreting hardware failure logs  
-- Running SMART & CHKDSK diagnostics  
-- Managing storage and partitions in Windows  
-- Simulating real hardware replacement in VirtualBox  
-- Understanding initialization, partitioning, and formatting  
-- Restoring full disk functionality after hardware failure  
+📸 **Screenshots:**  
+- 03_ClientAccessInitial.png  
+- 04_MappedDriveWorking.png  
+
+---
+
+# 🥉 Step 3 — Break Permissions to Simulate an Issue
+
+Permissions were intentionally removed to recreate an “Access Denied” support scenario.
+
+📸 05_ServerPermissionsBroken.png  
+
+When the user attempts to access the mapped drive:  
+📸 06_ClientAccessError.png  
+
+---
+
+# 🔍 Step 4 — Troubleshoot the Issue (Client-Side)
+
+Performed standard Helpdesk diagnostics:
+
+### ✔️ Network Connectivity  
+📸 07_PingServer.png  
+
+### ✔️ Credential Manager Check  
+📸 08_CredentialCheck.png  
+
+### ✔️ UNC Path Test  
+📸 09_ClientUNC_Test.png  
+
+Results showed:  
+- Network is working  
+- DNS is resolving  
+- No cached credentials  
+- UNC path reachable  
+➡️ **Root cause confirmed: server-side permissions.**
+
+---
+
+# 🛠️ Step 5 — Fix the Issue (Server-Side)
+
+Restored proper share + NTFS permissions and confirmed correct security group access.
+
+📸 10_ServerPermissionsFixed.png  
+
+---
+
+# ✅ Step 6 — Confirm Resolution
+
+The client tested again and successfully accessed the restored shared drive.
+
+📸 11_ClientAccessRestored.png  
+
+---
+
+# 🎯 Final Result
+
+This lab demonstrates realistic Helpdesk troubleshooting, including:
+
+- Network share diagnostics  
+- Authentication and permissions analysis  
+- User support workflow  
+- Clear documentation of issue → cause → fix  
+- Realistic enterprise-grade remote troubleshooting scenario  
