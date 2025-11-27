@@ -62,4 +62,4 @@ This portfolio demonstrates real technical ability, documentation skills, and wo
 ## 🤝 Connect With Me
 
 GitHub: https://github.com/isaphife98  
-LinkedIn: *(Add your LinkedIn link here)*  
+LinkedIn: [*(isaiah phifer)*  ](https://www.linkedin.com/in/isaiah-phifer-8b9565271/)
