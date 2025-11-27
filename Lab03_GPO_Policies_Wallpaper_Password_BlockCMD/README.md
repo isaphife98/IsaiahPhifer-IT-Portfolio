@@ -1,4 +1,4 @@
-# Lab 04 – Group Policy Configuration (GPO-Only Lab)
+# Lab 03 – Group Policy Configuration (GPO-Only Lab)
 **Active Directory • GPO • System Hardening • Windows Management**
 
 This lab focuses exclusively on creating and deploying **Group Policy Objects (GPOs)** in a Windows domain environment.
