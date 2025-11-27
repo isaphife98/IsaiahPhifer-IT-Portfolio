@@ -1,88 +1,104 @@
 # 🛠️ Lab 08 – Remote Troubleshooting & Support Workflow
 
-This lab simulates a real Helpdesk ticket where a user suddenly loses access to a mapped shared drive. I recreated the issue, troubleshot it from both the client and server perspective, restored access, and documented every step with screenshots.
+This lab simulates a real Helpdesk ticket where a user suddenly loses access to a mapped shared drive. I recreated the issue, troubleshot it from both the client and server side, restored access, and documented each step.
 
 ---
 
-## 📁 Screenshots
+## 📁 Screenshots  
 All screenshots are stored in the folder:  
 **[📂 Screenshots](Screenshots/)**
 
 ---
 
-# 🧩 Overview
-This lab demonstrates the full lifecycle of a Helpdesk support case:
+# 🧩 Overview  
+This lab demonstrates an end-to-end troubleshooting workflow:
 
 - Recreated the shared drive issue  
 - Verified client connectivity  
-- Checked authentication & cached credentials  
-- Identified and fixed server-side permissions  
-- Restored connectivity  
-- Documented the workflow for future reference  
+- Checked authentication and cached credentials  
+- Identified the root cause  
+- Corrected server-side permissions  
+- Restored user access  
+- Documented every step for helpdesk use  
 
 ---
 
 # 🥇 Step 1 — Create & Share the Network Folder (Server)
 
-Configured a shared folder on the domain controller and verified initial share/NTFS permissions.
+Configured a shared folder on the domain controller and verified initial permissions.
 
 📸 **Screenshots:**  
-- 01_ServerShareSettings.png  
-- 02_ServerIP.png  
+- [01_ServerShareSettings.png](Screenshots/01_ServerShareSettings.png)  
+- [02_ServerIP.png](Screenshots/02_ServerIP.png)
 
 ---
 
 # 🥈 Step 2 — Map the Network Drive (Client)
 
-Confirmed that the client can initially access the shared folder and map it successfully.
+Confirmed the client can access the share and map it successfully.
 
 📸 **Screenshots:**  
-- 03_ClientAccessInitial.png  
-- 04_MappedDriveWorking.png  
+- [03_ClientAccessInitial.png](Screenshots/03_ClientAccessInitial.png)  
+- [04_MappedDriveWorking.png](Screenshots/04_MappedDriveWorking.png)
 
 ---
 
 # 🥉 Step 3 — Break Permissions to Simulate an Issue
 
-Permissions were intentionally removed to recreate an “Access Denied” support scenario.
+Permissions were intentionally removed to recreate a realistic “Access Denied” scenario.
 
-📸 05_ServerPermissionsBroken.png  
-
-When the user attempts to access the mapped drive:  
-📸 06_ClientAccessError.png  
+📸 **Screenshots:**  
+- [05_ServerPermissionsBroken.png](Screenshots/05_ServerPermissionsBroken.png)  
+- [06_ClientAccessError.png](Screenshots/06_ClientAccessError.png)
 
 ---
 
 # 🔍 Step 4 — Troubleshoot the Issue (Client-Side)
 
-Performed standard Helpdesk diagnostics:
+Performed standard Helpdesk diagnostics.
 
 ### ✔️ Network Connectivity  
-📸 07_PingServer.png  
+📸 [07_PingServer.png](Screenshots/07_PingServer.png)
 
 ### ✔️ Credential Manager Check  
-📸 08_CredentialCheck.png  
+📸 [08_CredentialCheck.png](Screenshots/08_CredentialCheck.png)
 
 ### ✔️ UNC Path Test  
-📸 09_ClientUNC_Test.png  
+📸 [09_ClientUNC_Test.png](Screenshots/09_ClientUNC_Test.png)
 
-Results showed:  
-- Network is working  
-- DNS is resolving  
+Findings:  
+- Network connectivity OK  
+- DNS resolving correctly  
 - No cached credentials  
 - UNC path reachable  
-➡️ **Root cause confirmed: server-side permissions.**
+➡️ Issue confirmed to be server-side permissions.
 
 ---
 
 # 🛠️ Step 5 — Fix the Issue (Server-Side)
 
-Restored proper share + NTFS permissions and confirmed correct security group access.
+Restored correct **NTFS** and **share permissions**.
 
-📸 10_ServerPermissionsFixed.png  
+📸 **Screenshot:**  
+- [10_ServerPermissionsFixed.png](Screenshots/10_ServerPermissionsFixed.png)
 
 ---
 
 # ✅ Step 6 — Confirm Resolution
 
-The client tested again and successfully accessed the restored shared drive
+Client re-tested access and successfully opened the shared drive.
+
+📸 **Screenshot:**  
+- [11_ClientAccessRestored.png](Screenshots/11_ClientAccessRestored.png)
+
+---
+
+# 🎯 Final Result
+
+This lab demonstrates real enterprise troubleshooting including:
+
+- Network share diagnostics  
+- Permission & authentication verification  
+- Accurate root-cause identification  
+- Systematic helpdesk-style workflow  
+- Clear communication & documentation  
