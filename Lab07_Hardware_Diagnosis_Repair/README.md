@@ -1,4 +1,4 @@
-# Lab 03 – Hardware Diagnosis & Repair
+# Lab 07 – Hardware Diagnosis & Repair
 **IT Support • Hardware Troubleshooting • Disk Management • Virtualization**
 
 This lab simulates a real-world hardware failure scenario, including diagnosing a failing disk (SMART/CHKDSK), verifying warning events in Event Viewer, and performing a clean replacement using a new virtual disk inside VirtualBox.
@@ -27,90 +27,52 @@ This lab simulates a real-world hardware failure scenario, including diagnosing 
 
 ---
 
-## 📁 Folder Structure
-
-```
-Lab03_Hardware_Diagnosis/
-│
-├── README.md
-│
-├── Step01_Identify_Failure/
-│      Step 01 - Event Viewer Disk Warning.png
-│      Step 01 - Disk Warning Details.png
-│      Step 01 - System Components Overview.png
-│      Step 01 - System Information Summary.png
-│
-├── Step02_Diagnostics/
-│      Step 02 - WMIC SMART Status Check.png
-│      Step 02 - CHKDSK Scan Results.png
-│      Step 02 - Disk Management Initial View.png
-│
-├── Step03_Add_Replacement_Drive/
-│      Step 03 - VirtualBox Storage Before Changes.png
-│      Step 03 - Add New Virtual Disk.png
-│      Step 03 - New Disk Added to VM.png
-│      Step 03 - New Disk Detected in Windows.png
-│
-└── Step04_Initialize_And_Format/
-       Step 04 - New Disk Unallocated Space.png
-       Step 04 - Initialize Disk Popup.png
-       Step 04 - Disk Set to Online.png
-       Step 04 - New Simple Volume Wizard.png
-       Step 04 - Assign Drive Letter.png
-       Step 04 - Format New Drive.png
-```
-
----
-
 # 🟦 Step-by-Step Process
 
-## 🟦 Step 01 – Identify Disk Failure
+## 🟦 Step 01 – Identify Hardware Failure
+📁 **Screenshots:**  
+[Step 01 – Identify Hardware Failure](Step%2001%20%E2%80%93%20Identify%20Hardware%20Failure/)
 
 I examined **Event Viewer → System Logs** and identified repeated disk I/O warnings indicating a failing storage device.
 
 Then I collected system-wide hardware information to understand the full context before replacement.
 
-📁 **Screenshots:**  
-`Step01_Identify_Failure/`
-
 ---
 
 ## 🟦 Step 02 – Run Diagnostics
+📁 **Screenshots:**  
+[Step 02 – Run Diagnostics (SMART, CHKDSK)](Step%2002%20%E2%80%93%20Run%20Diagnostics%20%28SMART,%20CHKDSK%29/)
 
-### ✔ SMART Status
+### ✔ SMART Status  
 Command:
-```
+```powershell
 wmic diskdrive get status
 ```
-Result: SMART status showed warnings.
 
-### ✔ CHKDSK Scan
+### ✔ CHKDSK Scan  
 Command:
-```
+```powershell
 chkdsk /scan
 ```
-Result: File system issues were detected.
 
-### ✔ Disk Management
+### ✔ Disk Management  
 Confirmed degraded disk state visually.
-
-📁 **Screenshots:**  
-`Step02_Diagnostics/`
 
 ---
 
-## 🟦 Step 03 – Add Replacement Virtual Disk
+## 🟦 Step 03 – Simulate Faulted Drive & Add New Virtual Disk
+📁 **Screenshots:**  
+[Step 03 – Simulate Faulted Drive & Add New Virtual Disk](Step%2003%20%E2%80%93%20Simulate%20Faulted%20Drive%20%26%20Add%20New%20Virtual%20Disk/)
 
 In **VirtualBox → Settings → Storage**, I added a new virtual hard disk to simulate replacing the failing physical drive.
 
 On reboot, Windows automatically detected the new disk.
 
-📁 **Screenshots:**  
-`Step03_Add_Replacement_Drive/`
-
 ---
 
-## 🟦 Step 04 – Initialize & Format the New Disk
+## 🟦 Step 04 – Initialize and Format Replacement Disk
+📁 **Screenshots:**  
+[Step 04 – Initialize and Format Replacement Disk](Step%2004%20%E2%80%93%20Initialize%20and%20Format%20Replacement%20Disk/)
 
 Using **Disk Management**, I completed the replacement:
 
@@ -120,9 +82,6 @@ Using **Disk Management**, I completed the replacement:
 - Assigned drive letter  
 - Formatted using NTFS  
 - Verified healthy status  
-
-📁 **Screenshots:**  
-`Step04_Initialize_And_Format/`
 
 ---
 
@@ -136,10 +95,3 @@ This lab demonstrates essential IT technician and Helpdesk skills:
 - Simulating real hardware replacement in VirtualBox  
 - Understanding initialization, partitioning, and formatting  
 - Restoring full disk functionality after hardware failure  
-
-A realistic simulation of tasks handled by **Helpdesk**, **Desktop Support**, and **Junior SysAdmin** roles.
-
----
-
-# 🚀 Lab Completed
-This lab is finished and ready to upload to your GitHub IT Support portfolio.
