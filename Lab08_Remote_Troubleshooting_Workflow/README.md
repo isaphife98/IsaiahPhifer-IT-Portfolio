@@ -1,86 +1,88 @@
-# 🛠️ Lab 02 – Remote Troubleshooting & Support Workflow
+# 🛠️ Lab 08 – Remote Troubleshooting & Support Workflow
 
-This lab simulates a real Helpdesk scenario where a remote user loses access to a shared network drive. The goal is to recreate the issue, diagnose it, fix it, and document a support workflow that reflects real enterprise troubleshooting.
-
----
-
-## 📁 Screenshots  
-All screenshots for this lab are stored in:  
-**[Screenshots](Screenshots/)**
+This lab simulates a real Helpdesk ticket where a user suddenly loses access to a mapped shared drive. I recreated the issue, troubleshot it from both the client and server perspective, restored access, and documented every step with screenshots.
 
 ---
 
-## 🧩 Overview
-
-In this lab, I walked through a full end-to-end troubleshooting process:
-
-- Recreated a shared drive issue  
-- Validated network connectivity  
-- Checked permissions and authentication  
-- Applied fixes on the server  
-- Confirmed successful access restoration  
-
-This lab demonstrates realistic helpdesk responsibilities including communication, diagnosis, and remote user support.
+## 📁 Screenshots
+All screenshots are stored in the folder:  
+**[📂 Screenshots](Screenshots/)**
 
 ---
 
-## 🥇 Step 1 — Create & Share a Network Folder (Server)
+# 🧩 Overview
+This lab demonstrates the full lifecycle of a Helpdesk support case:
 
-- Created a shared folder on the server  
-- Configured NTFS and Share permissions  
-- Documented initial working state  
-
----
-
-## 🥈 Step 2 — Map the Network Drive (Client)
-
-- Tested access from the client  
-- Mapped the network share  
-- Verified initial connection success  
+- Recreated the shared drive issue  
+- Verified client connectivity  
+- Checked authentication & cached credentials  
+- Identified and fixed server-side permissions  
+- Restored connectivity  
+- Documented the workflow for future reference  
 
 ---
 
-## 🥉 Step 3 — Break Permissions to Simulate Issue
+# 🥇 Step 1 — Create & Share the Network Folder (Server)
 
-- Removed necessary NTFS permissions  
-- Ensured the client could no longer access the drive  
-- Reproduced a realistic “Access Denied” ticket scenario  
+Configured a shared folder on the domain controller and verified initial share/NTFS permissions.
 
----
-
-## 🔍 Step 4 — Troubleshoot (Client Side)
-
-- Tested reachability via `ping`  
-- Checked DNS resolution  
-- Verified share visibility  
-- Attempted re-authentication  
-- Reviewed credential manager / cached credentials  
+📸 **Screenshots:**  
+- 01_ServerShareSettings.png  
+- 02_ServerIP.png  
 
 ---
 
-## 🛠️ Step 5 — Fix the Issue (Server Side)
+# 🥈 Step 2 — Map the Network Drive (Client)
 
-- Restored correct NTFS permissions  
-- Validated share-level permissions  
-- Confirmed user group membership  
-- Ensured proper inheritance  
+Confirmed that the client can initially access the shared folder and map it successfully.
 
----
-
-## ✅ Step 6 — Confirm Resolution
-
-- Client remapped and accessed the folder  
-- Verified read/write access works  
-- Documented final working state  
+📸 **Screenshots:**  
+- 03_ClientAccessInitial.png  
+- 04_MappedDriveWorking.png  
 
 ---
 
-## 🎯 Final Result
+# 🥉 Step 3 — Break Permissions to Simulate an Issue
 
-A realistic helpdesk troubleshooting workflow was completed, demonstrating:
+Permissions were intentionally removed to recreate an “Access Denied” support scenario.
 
-- Network share troubleshooting  
-- Permissions diagnosis  
-- User access restoration  
-- Documentation and structured workflow  
-- Clear communication steps useful for enterprise support teams  
+📸 05_ServerPermissionsBroken.png  
+
+When the user attempts to access the mapped drive:  
+📸 06_ClientAccessError.png  
+
+---
+
+# 🔍 Step 4 — Troubleshoot the Issue (Client-Side)
+
+Performed standard Helpdesk diagnostics:
+
+### ✔️ Network Connectivity  
+📸 07_PingServer.png  
+
+### ✔️ Credential Manager Check  
+📸 08_CredentialCheck.png  
+
+### ✔️ UNC Path Test  
+📸 09_ClientUNC_Test.png  
+
+Results showed:  
+- Network is working  
+- DNS is resolving  
+- No cached credentials  
+- UNC path reachable  
+➡️ **Root cause confirmed: server-side permissions.**
+
+---
+
+# 🛠️ Step 5 — Fix the Issue (Server-Side)
+
+Restored proper share + NTFS permissions and confirmed correct security group access.
+
+📸 10_ServerPermissionsFixed.png  
+
+---
+
+# ✅ Step 6 — Confirm Resolution
+
+The client tested again and successfully accessed the restored shared drive
