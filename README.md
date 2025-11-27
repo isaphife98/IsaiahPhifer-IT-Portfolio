@@ -19,15 +19,14 @@ Each lab simulates real-world tasks performed by Helpdesk, Desktop Support, and 
 
 ### 🔹 Completed Labs
 
-- **[Lab 01 – Active Directory Environment Setup](Lab01_ActiveDirectory_Environment_Setup/)**
-- **[Lab 02 – Drive Mapping via GPO](Lab02_Drive_Mapping_GPO/)**
-- **[Lab 03 – GPO: Wallpaper, Password, BlockCMD](Lab03_GPO_Policies_Wallpaper_Password_BlockCMD/)**
-- **[Lab 04 – NTFS & Share Permissions](Lab04_NTFS_Share_Permissions/)**
-- **[Lab 05 – Printer Deployment via GPO](Lab05_Printer_Deployment_via_GPO/)**
-- **[Lab 06 – osTicket Lab](Lab06_OSTicket_Lab/)**
-- **[Lab 07 – Hardware Diagnosis & Repair](Lab07_Hardware_Diagnosis_Repair/)**
-- **[Lab 08 – Remote Troubleshooting Workflow](Lab08_Remote_Troubleshooting_Workflow/)**
-
+**[Lab 01 – Active Directory Environment Setup](Lab01_ActiveDirectory_Environment_Setup/)**  
+**[Lab 02 – Drive Mapping via GPO](Lab02_Drive_Mapping_GPO/)**  
+**[Lab 03 – GPO: Wallpaper, Password, BlockCMD](Lab03_GPO_Policies_Wallpaper_Password_BlockCMD/)**  
+**[Lab 04 – NTFS & Share Permissions](Lab04_NTFS_Share_Permissions/)**  
+**[Lab 05 – Printer Deployment via GPO](Lab05_Printer_Deployment_via_GPO/)**  
+**[Lab 06 – osTicket Lab](Lab06_OSTicket_Lab/)**  
+**[Lab 07 – Hardware Diagnosis & Repair](Lab07_Hardware_Diagnosis_Repair/)**  
+**[Lab 08 – Remote Troubleshooting Workflow](Lab08_Remote_Troubleshooting_Workflow/)**
 
 ---
 
