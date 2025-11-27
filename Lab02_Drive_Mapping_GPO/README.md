@@ -1,4 +1,4 @@
-# Lab 03 – Drive Mapping via Group Policy (Item-Level Targeting)
+# Lab 02 – Drive Mapping via Group Policy (Item-Level Targeting)
 **Active Directory • GPO • File Services • Client Management**
 
 This lab demonstrates how to assign network drive mappings using **Group Policy Preferences** with **Item-Level Targeting (ILT)** so each department only receives its assigned network share.
