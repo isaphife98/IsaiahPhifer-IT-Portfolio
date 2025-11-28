@@ -45,7 +45,7 @@ Each lab simulates real-world tasks performed by Helpdesk, Desktop Support, and 
 
 ## 🧑‍💻 About Me
 
-I am an aspiring **IT Support Specialist / Junior SysAdmin** with hands-on experience in:
+I am an entry-level IT Support Specialist / Junior SysAdmin with hands-on experience in:
 
 - Enterprise Windows Administration  
 - User & Group Management  
