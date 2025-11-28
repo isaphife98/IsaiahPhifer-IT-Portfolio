@@ -101,3 +101,4 @@ This lab demonstrates the complete workflow for diagnosing and repairing a faili
 
 This mirrors real-world responsibilities of **Helpdesk**, **Desktop Support**, and **SysAdmin** roles.
 
+
