@@ -1,4 +1,4 @@
-# Lab 06 – Printer Deployment via Group Policy (GPO)
+# Lab 05 – Printer Deployment via Group Policy (GPO)
 **Active Directory • GPO • Print Services • Client Management**
 
 This lab demonstrates how to deploy a shared printer to domain‑joined clients using **Group Policy Preferences**, one of the most common tasks performed by Helpdesk and SysAdmin teams.
