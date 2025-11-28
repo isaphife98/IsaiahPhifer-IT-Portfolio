@@ -1,103 +1,103 @@
-# 🛠️ Lab 07 – Hardware Diagnosis & Repair  
-This lab simulates a full hardware troubleshooting and disk replacement workflow, similar to what a Helpdesk or Jr. SysAdmin performs when a server begins showing disk reliability issues.  
+# 🛠️ Lab 07 Hardware Diagnosis & Disk Replacement Lab
+Windows Server 2019 • VirtualBox • Clonezilla • Disk Management • System Diagnostics
 
-Using Windows Server 2019, VirtualBox, built‑in diagnostic tools, and Clonezilla, I diagnosed disk warnings, added replacement hardware, cloned the system disk, and validated a successful migration.
-
----
-
-# 📂 Lab Structure (Clickable Folders)
-
-### ▶️ **[Step01_Diagnose_Hardware](Step01_Diagnose_Hardware)**
-Identify symptoms, analyze NTFS warnings, check SMART data, validate system information, and run file system diagnostics.
-
-### ▶️ **[Step02_Add_Replacement_Disk](Step02_Add_Replacement_Disk)**
-Attach a new 120GB virtual disk to simulate hardware replacement and verify detection in Disk Management.
-
-### ▶️ **[Step03_Clone_OS_Using_Clonezilla](Step03_Clone_OS_Using_Clonezilla)**
-Clone the OS from the failing disk to the new one using Clonezilla’s disk‑to‑disk mode. Includes warnings, partition table selection, fsck options, and final logs.
-
-### ▶️ **[Step04_Validate_Repair](Step04_Validate_Repair)**
-Remove the ISO, boot normally, confirm successful migration, and verify the old failing disk is offline.
+This lab demonstrates a full end-to-end hardware troubleshooting and disk replacement workflow.
+Using Windows Server 2019 and Clonezilla, I diagnosed disk reliability warnings, added replacement hardware, cloned the OS to a new disk, and validated the server’s recovery—mirroring a real-world Helpdesk / SysAdmin repair scenario.
 
 ---
 
-# 🧩 Step-by-Step Breakdown
+# 🧩 Lab Environment
+**Host:** Windows 10 Pro (VirtualBox)  
+**Server OS:** Windows Server 2019 Standard Evaluation  
+**vCPU:** 2  
+**RAM:** 4 GB  
+**Primary Disk (Disk 0):** 60GB VHD (failing)  
+**Replacement Disk (Disk 1):** 120GB VHD  
+**Cloning Tool:** Clonezilla Live ISO  
+**Diagnostics:** CHKDSK • WMIC SMART • Event Viewer • msinfo32  
 
 ---
 
-## 📁 **Step 01 – Diagnose the Hardware Issue**  
-**Screenshots stored in:**  
-👉 [Step01_Diagnose_Hardware](Step01_Diagnose_Hardware)
-
-### **Actions Performed**
-- Reviewed **Event Viewer → System → Disk & NTFS logs**  
-- Identified repeated NTFS/UBPM entries suggesting potential disk reliability issues  
-- Collected full system hardware info via **msinfo32**  
-- Opened **Components → Storage → Disks** for sector and partition validation  
-- Ran **CHKDSK** to verify file system integrity  
-- Collected **WMIC SMART status**  
-- Documented base **Disk Management** layout before adding new hardware  
+# 🧩 Skills Demonstrated
+- Diagnosing hardware reliability issues  
+- Reviewing NTFS, Disk, and UBPM warnings  
+- Verifying disk health (SMART, CHKDSK, msinfo32)  
+- Adding and configuring replacement storage hardware  
+- Using Clonezilla for disk-to-disk OS cloning  
+- Validating disk migration and boot integrity  
+- Performing real-world Helpdesk troubleshooting workflow  
+- Clean documentation and IT ticket–style reporting  
 
 ---
 
-## 📁 **Step 02 – Add Replacement Disk**  
-**Screenshots stored in:**  
-👉 [Step02_Add_Replacement_Disk](Step02_Add_Replacement_Disk)
+# 📁 Step 01 — Diagnose the Hardware Issue
+Screenshots stored in:  
+➡️ **[Step01_Diagnose_Hardware](Step01_Diagnose_Hardware)**
 
-### **Actions Performed**
-- Added a **120GB VDI** as the new replacement disk  
-- Verified Disk 1 appears as **Unallocated**  
-- Confirmed Disk 0 remains the primary boot drive  
-- Prepared environment for cloning  
-
----
-
-## 📁 **Step 03 – Clone OS to New Disk Using Clonezilla**  
-**Screenshots stored in:**  
-👉 [Step03_Clone_OS_Using_Clonezilla](Step03_Clone_OS_Using_Clonezilla)
-
-### **Actions Performed**
-- Downloaded and mounted **Clonezilla Live ISO**  
-- Booted into disk‑to‑disk cloning mode  
-- Chose the correct **source (Disk 0)** and **destination (Disk 1)**  
-- Set expert parameters:  
-  - `-k0` Keep partition table from source  
-  - `-sfsck` Skip filesystem checking  
-- Acknowledged overwrite warnings  
-- Captured cloning progress and final logs showing success  
+### Actions Performed
+- Reviewed **Event Viewer → System** for NTFS and disk warnings  
+- Verified disk model, size, and sector configuration via **msinfo32**  
+- Inspected disk-level details using **Components → Storage → Disks**  
+- Ran **CHKDSK** to validate file system integrity  
+- Checked SMART status:
+  ```bash
+  wmic diskdrive get status
+  ```
+- Documented original state in **Disk Management** before adding replacement disk  
 
 ---
 
-## 📁 **Step 04 – Validate the Repair**  
-**Screenshots stored in:**  
-👉 [Step04_Validate_Repair](Step04_Validate_Repair)
+# 📁 Step 02 — Add Replacement Disk
+Screenshots stored in:  
+➡️ **[Step02_Add_Replacement_Disk](Step02_Add_Replacement_Disk)**
 
-### **Actions Performed**
-- Removed Clonezilla ISO  
-- Booted system normally from new disk  
-- Verified Disk 1 is now the **active system disk**  
-- Set Disk 0 (old failing disk) **Offline**  
-- Confirmed:  
-  ✔ System boots correctly  
-  ✔ No NTFS warnings  
-  ✔ Expanded capacity available (118GB)  
+### Actions Performed
+- Created a new **120GB VDI** as the replacement hard disk  
+- Attached the drive to the virtual machine as **Disk 1**  
+- Verified Disk 1 appeared as **Unallocated** in Disk Management  
+- Confirmed Disk 0 remained online and bootable prior to cloning  
 
 ---
 
-# 📈 Final Outcome
-✔ Successful hardware diagnosis  
-✔ Replacement disk installed  
-✔ OS cloned with no data loss  
-✔ Old disk safely removed  
-✔ Server fully operational on upgraded storage  
+# 📁 Step 03 — Clone OS to New Disk Using Clonezilla
+Screenshots stored in:  
+➡️ **[Step03_Clone_OS_Using_Clonezilla](Step03_Clone_OS_Using_Clonezilla)**
+
+### Actions Performed
+- Mounted **Clonezilla Live** ISO and booted into recovery mode  
+- Selected: **device-device → disk_to_local_disk**  
+- Chose **Disk 0 (source)** → **Disk 1 (destination)**  
+- Applied advanced options:
+  - `-k0` keep source partition table  
+  - `-sfsck` skip filesystem checking  
+- Acknowledged all overwrite warnings  
+- Captured Clonezilla progress and success confirmation  
+- Shut down VM to begin using new hardware  
 
 ---
 
-# 🧠 Reflection
-This lab reinforced real‑world IT support skills, including:  
-- Reading Event Viewer disk warnings  
-- Distinguishing between logical vs. physical problems  
-- Using WMIC, CHKDSK, and msinfo32 for diagnostics  
-- Cloning drives with Clonezilla  
-- Completing a clean hardware replacement workflow  
-- Documenting troubleshooting steps professionally  
+# 📁 Step 04 — Validate the Repair
+Screenshots stored in:  
+➡️ **[Step04_Validate_Repair](Step04_Validate_Repair)**
+
+### Actions Performed
+- Removed Clonezilla ISO and performed a standard boot  
+- Verified Disk 1 now contains the cloned system partitions  
+- Confirmed Disk 1 marked **Healthy (Boot, Active, Primary)**  
+- Set Disk 0 (failing disk) **Offline**  
+- Validated clean boot, stability, and increased storage capacity  
+
+---
+
+# ✅ Summary
+This lab demonstrates the complete workflow for diagnosing and repairing a failing disk in a Windows Server environment:
+
+- Identified early disk failure symptoms  
+- Verified system and disk health using built-in tools  
+- Installed and validated replacement hardware  
+- Performed an OS clone using Clonezilla  
+- Confirmed proper booting and disk structure on new hardware  
+- Retired the faulty disk safely  
+
+This mirrors real-world responsibilities of **Helpdesk**, **Desktop Support**, and **SysAdmin** roles.
+
