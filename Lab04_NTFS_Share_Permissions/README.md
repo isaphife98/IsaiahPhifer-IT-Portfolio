@@ -1,4 +1,4 @@
-# Lab 05 – NTFS & Share Permissions Configuration
+# Lab 04 – NTFS & Share Permissions Configuration
 **Windows Server • File Security • NTFS ACLs • Helpdesk Troubleshooting**
 
 This lab demonstrates configuring secure, department-based file access using **NTFS permissions**, one of the most essential skills for Helpdesk and System Administrators.  
